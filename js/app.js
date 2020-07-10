@@ -1,44 +1,32 @@
-//immediate invoked function expression
-(function() {
-  const quotes = [
-    {
-      quote:
-        "Life is too short and sweet to be spent by cribbing and complaining about things. Here are some random quotes about the most wonderful gift that we've got",
-      author: " Life"
-    },
-    {
-      quote:
-        "Humor is richly rewarding to the person who employs it. It has some value in gaining and holding attention. But it has no persuasive value at all",
-      author: "John Kenneth Galbraith"
-    },
-    {
-      quote:
-        "God save me from my friends. I can protect myself from my enemies.",
-      author: "Claude Louis Hector de Villars "
-    },
-    {
-      quote: "The price of anything is the amount of life you exchange for it.",
-      author: "David Thoreau"
-    },
-    {
-      quote:
-        "Life is like a landscape. You live in the midst of it but can describe it only from the vantage point of distance. ",
-      author: "Charles Lindbergh"
-    },
-    {
-      quote:
-        "A critic is someone who never actually goes to the battle, yet who afterwards comes out shooting the wounded.",
-      author: " Tyne Daly"
-    }
-  ];
+const generateBtn = document.getElementById('generate-btn');
+const quote = document.getElementById('quote');
+const quoteAuthor = document.querySelector('.quote-author');
 
-  const btn = document.getElementById("generate-btn");
+const quotes = [
+  {
+    quote: 'Losers visualize the penalties of failer. Winners visualize rewards of success',
+    author: 'Danial Ally'
+  },
+  {
+    quote: 'If the Devil can distract you, he can destroy you.',
+    author: 'Danial Ally'
+  },
+  {
+    quote: 'Let people plan their own lives, as long as they don\'t hurt people or take their stuff.',
+    author: 'Matt Kibbe'
+  },
+  {
+    quote: 'Those who would give up their liberty for security deserve neither.',
+    author: 'Ben Franklin'
+  }
+];
 
-  btn.addEventListener("click", function() {
-    let random = Math.floor(Math.random() * quotes.length);
-    console.log(random);
 
-    document.getElementById("quote").textContent = quotes[random].quote;
-    document.querySelector(".author").textContent = quotes[random].author;
-  });
-})();
+
+console.log(quotes[1].quote);
+
+generateBtn.addEventListener('click', () => {
+  const randNum = Math.floor(Math.random() * quotes.length);
+  quote.textContent = quotes[randNum].quote;
+  quoteAuthor.textContent = quotes[randNum].author;
+})
